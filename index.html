@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candlestick Patterns Visual Reference</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #ffd700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .patterns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pattern-card {
+            background: rgba(255,255,255,0.15);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pattern-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .pattern-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .candlestick-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 120px;
+            margin: 15px 0;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .candlestick {
+            margin: 0 3px;
+            position: relative;
+        }
+
+        .wick {
+            width: 2px;
+            background: #888;
+            margin: 0 auto;
+        }
+
+        .body {
+            width: 12px;
+            border: 1px solid;
+            margin: 0 auto;
+        }
+
+        .bullish {
+            background: #4CAF50;
+            border-color: #2E7D32;
+        }
+
+        .bearish {
+            background: #F44336;
+            border-color: #C62828;
+        }
+
+        .neutral {
+            background: #FFC107;
+            border-color: #F57F17;
+        }
+
+        .doji {
+            background: transparent;
+            border-color: #888;
+            width: 14px;
+        }
+
+        .description {
+            font-size: 0.9em;
+            color: #e0e0e0;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+
+        .signal {
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-top: 8px;
+            display: inline-block;
+        }
+
+        .bullish-signal {
+            background: rgba(76, 175, 80, 0.3);
+            color: #81C784;
+        }
+
+        .bearish-signal {
+            background: rgba(244, 67, 54, 0.3);
+            color: #E57373;
+        }
+
+        .neutral-signal {
+            background: rgba(255, 193, 7, 0.3);
+            color: #FFD54F;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Candlestick Patterns Visual Reference</h1>
+
+        <!-- SINGLE CANDLESTICK PATTERNS -->
+        <div class="section">
+            <div class="section-title">Single Candlestick Patterns</div>
+            <div class="patterns-grid">
+                <div class="pattern-card">
+                    <div class="pattern-name">Doji</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 30px;"></div>
+                            <div class="body doji" style="height: 2px;"></div>
+                            <div class="wick" style="height: 30px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Open ≈ Close; signals market indecision</div>
+                    <div class="signal neutral-signal">Market Indecision</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Hammer</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 15px;"></div>
+                            <div class="wick" style="height: 45px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Small body, long lower wick</div>
+                    <div class="signal bullish-signal">Bullish Reversal</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Inverted Hammer</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 45px;"></div>
+                            <div class="body bullish" style="height: 15px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Small body, long upper wick</div>
+                    <div class="signal bullish-signal">Bullish Reversal</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Shooting Star</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 45px;"></div>
+                            <div class="body bearish" style="height: 15px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Small body, long upper wick</div>
+                    <div class="signal bearish-signal">Bearish Reversal</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Spinning Top</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 25px;"></div>
+                            <div class="body neutral" style="height: 12px;"></div>
+                            <div class="wick" style="height: 25px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Small body, long wicks both sides</div>
+                    <div class="signal neutral-signal">Indecision</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Marubozu</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="body bullish" style="height: 60px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">No wicks, all body</div>
+                    <div class="signal bullish-signal">Strong Trend</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Dragonfly Doji</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="body doji" style="height: 2px;"></div>
+                            <div class="wick" style="height: 50px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Open = Close = High</div>
+                    <div class="signal bullish-signal">Bullish Reversal</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Gravestone Doji</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 50px;"></div>
+                            <div class="body doji" style="height: 2px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Open = Close = Low</div>
+                    <div class="signal bearish-signal">Bearish Reversal</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DUAL CANDLESTICK PATTERNS -->
+        <div class="section">
+            <div class="section-title">Dual Candlestick Patterns</div>
+            <div class="patterns-grid">
+                <div class="pattern-card">
+                    <div class="pattern-name">Bullish Engulfing</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body bearish" style="height: 25px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 45px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Small red followed by large green</div>
+                    <div class="signal bullish-signal">Bullish Reversal</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Bearish Engulfing</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body bullish" style="height: 25px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 45px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Small green followed by large red</div>
+                    <div class="signal bearish-signal">Bearish Reversal</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Piercing Line</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 40px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick" style="margin-top: 8px;">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Gap down, close > midpoint</div>
+                    <div class="signal bullish-signal">Bullish</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Dark Cloud Cover</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 40px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick" style="margin-top: -8px;">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Gap up, close < midpoint</div>
+                    <div class="signal bearish-signal">Bearish</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Tweezer Bottom</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 10px;"></div>
+                            <div class="body bearish" style="height: 25px;"></div>
+                            <div class="wick" style="height: 25px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 15px;"></div>
+                            <div class="body bullish" style="height: 20px;"></div>
+                            <div class="wick" style="height: 25px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Two candles with matching lows</div>
+                    <div class="signal bullish-signal">Bullish</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Tweezer Top</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 25px;"></div>
+                            <div class="body bullish" style="height: 25px;"></div>
+                            <div class="wick" style="height: 10px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 25px;"></div>
+                            <div class="body bearish" style="height: 20px;"></div>
+                            <div class="wick" style="height: 15px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Two candles with matching highs</div>
+                    <div class="signal bearish-signal">Bearish</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Harami</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 45px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 15px;"></div>
+                            <div class="body bullish" style="height: 20px;"></div>
+                            <div class="wick" style="height: 15px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Small candle inside large one</div>
+                    <div class="signal neutral-signal">Trend Weakening</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Kicker</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="body bearish" style="height: 35px;"></div>
+                        </div>
+                        <div class="candlestick" style="margin-top: -15px;">
+                            <div class="body bullish" style="height: 35px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Gap between opposite marubozu</div>
+                    <div class="signal bullish-signal">Strong Reversal</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TRIPLE CANDLESTICK PATTERNS -->
+        <div class="section">
+            <div class="section-title">Triple Candlestick Patterns</div>
+            <div class="patterns-grid">
+                <div class="pattern-card">
+                    <div class="pattern-name">Morning Star</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick" style="margin-top: 10px;">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body neutral" style="height: 8px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Bearish → small → bullish</div>
+                    <div class="signal bullish-signal">Bullish Reversal</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Evening Star</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick" style="margin-top: -10px;">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body neutral" style="height: 8px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Bullish → small → bearish</div>
+                    <div class="signal bearish-signal">Bearish Reversal</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Three White Soldiers</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 30px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick" style="margin-top: -5px;">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 30px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick" style="margin-top: -5px;">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 30px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Three strong green candles</div>
+                    <div class="signal bullish-signal">Bullish Continuation</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Three Black Crows</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 30px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick" style="margin-top: 5px;">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 30px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick" style="margin-top: 5px;">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 30px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Three strong red candles</div>
+                    <div class="signal bearish-signal">Bearish Continuation</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Three Inside Up</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 40px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 12px;"></div>
+                            <div class="body bullish" style="height: 20px;"></div>
+                            <div class="wick" style="height: 12px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Small inside big red, then green</div>
+                    <div class="signal bullish-signal">Bullish</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Three Inside Down</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 40px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 12px;"></div>
+                            <div class="body bearish" style="height: 20px;"></div>
+                            <div class="wick" style="height: 12px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Small inside big green, then red</div>
+                    <div class="signal bearish-signal">Bearish</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADVANCED PATTERNS -->
+        <div class="section">
+            <div class="section-title">Advanced & Rare Patterns</div>
+            <div class="patterns-grid">
+                <div class="pattern-card">
+                    <div class="pattern-name">Rising Three Methods</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body bearish" style="height: 12px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body bearish" style="height: 12px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body bearish" style="height: 12px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Bullish → 3 small bearish → bullish</div>
+                    <div class="signal bullish-signal">Bullish Continuation</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Falling Three Methods</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body bullish" style="height: 12px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body bullish" style="height: 12px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body bullish" style="height: 12px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 35px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Bearish → 3 small bullish → bearish</div>
+                    <div class="signal bearish-signal">Bearish Continuation</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Belt Hold (Bullish)</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="body bullish" style="height: 50px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Opens at low, closes near high</div>
+                    <div class="signal bullish-signal">Bullish Reversal</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Belt Hold (Bearish)</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body bearish" style="height: 50px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Opens at high, closes near low</div>
+                    <div class="signal bearish-signal">Bearish Reversal</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Abandoned Baby</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 30px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick" style="margin-top: 15px;">
+                            <div class="wick" style="height: 8px;"></div>
+                            <div class="body doji" style="height: 2px;"></div>
+                            <div class="wick" style="height: 8px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bullish" style="height: 30px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Doji gaps away from both sides</div>
+                    <div class="signal bullish-signal">Strong Reversal</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Long-Legged Doji</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 35px;"></div>
+                            <div class="body doji" style="height: 2px;"></div>
+                            <div class="wick" style="height: 35px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Very long wicks, extreme indecision</div>
+                    <div class="signal neutral-signal">Strong Indecision</div>
+                </div>
+
+                <div class="pattern-card">
+                    <div class="pattern-name">Harami Cross</div>
+                    <div class="candlestick-container">
+                        <div class="candlestick">
+                            <div class="wick" style="height: 5px;"></div>
+                            <div class="body bearish" style="height: 45px;"></div>
+                            <div class="wick" style="height: 5px;"></div>
+                        </div>
+                        <div class="candlestick">
+                            <div class="wick" style="height: 15px;"></div>
+                            <div class="body doji" style="height: 2px;"></div>
+                            <div class="wick" style="height: 15px;"></div>
+                        </div>
+                    </div>
+                    <div class="description">Doji inside large body</div>
+                    <div class="signal neutral-signal">Strong Reversal Signal</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
